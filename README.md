@@ -32,4 +32,4 @@ You can logout from your Drupal site, and visit `your.website.domain/drockchat` 
 
 - Fix the custom server address and server port, in the config form, so that the Module work on the desired server, not the local.
 - Add a custom Rocket.Chat slach command for the admin, to offer the ability to communicate with a Raspberry Pi/Beaglebone (will create another separate repo for this)
-- Add more features for the configuration of the module, expect the server/port
+- Add more features for the configuration of the module, rather than the server/port
