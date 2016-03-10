@@ -15,14 +15,14 @@ After installing your Rocket.Chat server, create an account (you'll have the adm
 
 ### Installation
 
-- Clone the repo: `git clone git@github.com:JelX7ouss/drockchat.git`
-- `cp drockchat your_drupal_site_folder/modules/custom`
-- Install the module: go to your Drupal site dashboard `Extend` and type `Rocket.Live` and hit install
-- clear cache (drupal side)
-- go to `your.website.domain/admin/config/drockchat`
-- type your server address and the server port
-- clear cache (one more time)
-- visit `your.website.domain/drockchat` and a nice red widget will appear
+- [x] Clone the repo: `git clone git@github.com:JelX7ouss/drockchat.git`
+- [x] `cp drockchat your_drupal_site_folder/modules/custom`
+- [x] Install the module: go to your Drupal site dashboard `Extend` and type `Rocket.Live` and hit install
+- [x] clear cache (drupal side)
+- [x] go to `your.website.domain/admin/config/drockchat`
+- [ ] type your server address and the server port _(works only on the default Rocket.Chat server localhost:3000. Will fix this soon)_ :blush:
+- [ ] clear cache (one more time)
+- [x] visit `your.website.domain/drockchat` and a nice red widget will appear
 
 You can now enjoy writing random messages, don't be lazy and go back to your Rocket.Chat server and reply!
 You can logout from your Drupal site, and visit `your.website.domain/drockchat` again, and use it as a guest.
@@ -32,5 +32,5 @@ You can logout from your Drupal site, and visit `your.website.domain/drockchat` 
 
 - Make the widget work on all the pages of your website
 - Custom server/port configuration support, so that the Module work on the custom user server, not the local.
-- Custom Rocket.Chat slach command for the admin, to offer the ability to communicate with a Raspberry Pi/Beaglebone (will create another separate repo for this)
+- Custom Rocket.Chat slach command for the admin, to offer the ability to communicate with a **Raspberry Pi/Beaglebone** (will create another separate repo for this)
 - More features for the configuration of the module, rather than the server/port
