@@ -1,0 +1,19 @@
+drockchat:
+  version: 1.x
+  js:
+    js/drockchat-widget.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+
+json:
+  version: 1.x
+  js:
+    js/drockchat-conf.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+
+
+
+

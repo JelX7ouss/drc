@@ -1,0 +1,14 @@
+drockchat.content: 
+  path: '/drockchat'  
+  defaults: 
+    _controller: '\Drupal\drockchat\Controller\Rocket::createWidget' 
+  requirements: 
+    _permission: 'access content'
+
+drockchat.admin_settings:
+  path: '/admin/config/drockchat'
+  defaults:
+    _form: '\Drupal\drockchat\Form\LiveChatForm'
+    _title: '<b>Rocket.Chat</b>'
+  requirements:
+    _permission: 'administer site configuration'

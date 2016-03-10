@@ -1,0 +1,6 @@
+name: Rocket.Live
+description: A module for Rocket.Chat livechat feature.
+package: Custom
+configure: drockchat.admin_settings
+type: module
+core: 8.x
