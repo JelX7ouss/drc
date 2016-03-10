@@ -1,5 +1,9 @@
 (function($){
-
+	
+	/**
+	* note: port and url will be the submitted values of the configuration module form
+	*/
+	
 	// Server params.
 	var SERVER_MANAGER = {
 		"url": "http://localhost",
