@@ -2,7 +2,6 @@
 
 
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\rest\ResourceResponse;
 
 /**
  * Implements hook_menu().
