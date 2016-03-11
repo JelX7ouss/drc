@@ -16,7 +16,7 @@ After installing your Rocket.Chat server, create an account (you'll have the adm
 ### Installation
 
 - [x] Clone the repo: `git clone git@github.com:JelX7ouss/drockchat.git`
-- [x] `cp drockchat your_drupal_site_folder/modules/custom`
+- [x] `cp -vr drockchat your_drupal_site_folder/modules/custom`
 - [x] Install the module: go to your Drupal site dashboard `Extend` and type `Rocket.Live` and hit install
 - [x] clear cache (drupal side)
 - [x] go to `your.website.domain/admin/config/drockchat`
