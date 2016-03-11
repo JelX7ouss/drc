@@ -16,10 +16,11 @@ After installing your Rocket.Chat server, create an account (you'll have the adm
 ### Installation
 
 - [x] Clone the repo: `git clone git@github.com:JelX7ouss/drockchat.git`
+- [x] `mkdir your_drupal_site/modules/custom`
 - [x] `cp -vr drockchat your_drupal_site_folder/modules/custom`
-- [x] clear cache (drupal side)
+- [x] clear cache (do it quickly using _drush_ within `your_drupal_site_folder` type `drush cr`) 
 - [x] Install the module: go to your Drupal site dashboard `Extend` and type `Rocket.Live` and hit install
-- [x] clear cache (drupal side)
+- [x] `drush cr`
 - [x] go to `your.website.domain/admin/config/drockchat`
 - [ ] type your server address and the server port _(works only on the default Rocket.Chat server localhost:3000. Will fix this soon)_ :blush:
 - [ ] clear cache (one more time)
