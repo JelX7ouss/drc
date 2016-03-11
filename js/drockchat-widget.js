@@ -1,5 +1,5 @@
 (function($){
-	
+
 	/**
 	* note: port and url will be the submitted values of the configuration module form
 	*/
