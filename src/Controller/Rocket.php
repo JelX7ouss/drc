@@ -3,6 +3,8 @@
 /**
  * @file
  * Contains \Drupal\drockchat\Controller\Rocket.
+ *
+ * The main controller of our module.
  */
 
 namespace Drupal\drockchat\Controller;
@@ -14,13 +16,16 @@ class Rocket extends ControllerBase {
 
   public function createWidget(){
 
-      return array(
-        '#attached' => array(
-            'library' => array(
-            'drockchat/drockchat'
-            )
-        )
-      );
+      	$form['#attached']['library'][] = 'drockchat/drockchat_conf';
+
+	    $form['#attached']['drupalSettings']
+	    
+	    ['drockchat']['drockchat_conf']['server'] = \Drupal::config('drockchat.settings')->get('server');
+
+	    $form['#attached']['drupalSettings']
+	    ['drockchat']['drockchat_conf']['port'] = \Drupal::config('drockchat.settings')->get('port');
+
+	    return $form;
 
   }
 

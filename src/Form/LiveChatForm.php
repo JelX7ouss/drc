@@ -3,6 +3,10 @@
 /**
  * @file
  * Contains \Drupal\drockchat\Form\LiveChatForm.
+ *
+ * 
+ * The ConfigFormBase required class for module configuration
+ * Any configuration enhancement must be done within  
  */
 
 namespace Drupal\drockchat\Form;
@@ -64,13 +68,23 @@ class LiveChatForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
+
+    /**
+    * TODO: 
+    * PORT must be in [0-65535]
+    * SET a DEFAULT address as well as a DEFAULT port
+    * SET warning, info, notice messages
+    * SET a warning message if the Rocket.Chat server is not currently active - widget shouldn't appear
+    */
     
     if(!empty($form_state->getValue('url'))
         && !empty($form_state->getValue('ip_port'))
       ){ // fields are all submitted.
-      
-         if (5 < strlen($form_state->getValue('ip_port')))
-            $form_state->setErrorByName('url', $this->t('Are you sure that is a Port?'));
+        
+
+        // make sure port has 5 digits
+        if (5 < strlen($form_state->getValue('ip_port')))
+            $form_state->setErrorByName('url', $this->t('Please type a correct port!'));
 
     }
  

@@ -48,25 +48,18 @@ function drockchat_help($route_name, RouteMatchInterface $route_match) {
 
 function drockchat_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
 	
-	//  if($form_id === 'drockchat.admin_settings'){
+	 if($form_id === 'drockchat.admin_settings'){
 
- //      $test = new ResourceResponse([
- //              'json-key-1' => 'json-value-1',
- //              'json-key-2' => 'json-value-2'
- //            ]);
+	    $form['#attached']['library'][] = 'drockchat/drockchat_conf';
 
-	//     $form['#attached']['library'][] = 'drockchat/json';
-
-	//     $form['#attached']['drupalSettings']
+	    $form['#attached']['drupalSettings']
 	    
-	//     // TODO: cast config->get('key') to JSON format  
-	//     ['drockchat']['json']['server'] = // \Drupal::config('drockchat.settings')->get('server');
- //            $test->getResponseData();
+	    ['drockchat']['drockchat_conf']['server'] = \Drupal::config('drockchat.settings')->get('server');
 
-	//     $form['#attached']['drupalSettings']
-	//     ['drockchat']['json']['port'] = \Drupal::config('drockchat.settings')->get('port');
+	    $form['#attached']['drupalSettings']
+	    ['drockchat']['drockchat_conf']['port'] = \Drupal::config('drockchat.settings')->get('port');
 
-	//     return $form;
-	// }
+	    return $form;
+	}
 	
 }

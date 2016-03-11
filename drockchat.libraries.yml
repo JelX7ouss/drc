@@ -1,15 +1,8 @@
-drockchat:
+# Route to enable the usage of the js required file
+drockchat_conf:
   version: 1.x
   js:
-    js/drockchat-widget.js: {}
-  dependencies:
-    - core/jquery
-    - core/drupalSettings
-
-json:
-  version: 1.x
-  js:
-    js/drockchat-conf.json: {}
+    js/app.js: {}
   dependencies:
     - core/jquery
     - core/drupalSettings

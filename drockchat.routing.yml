@@ -1,3 +1,6 @@
+
+# Route require modifications
+# MUST: widget to appear on all the pages
 drockchat.content: 
   path: '/drockchat'  
   defaults: 
@@ -5,6 +8,7 @@ drockchat.content:
   requirements: 
     _permission: 'access content'
 
+# Route for the configuration form <ConfigFormBase>
 drockchat.admin_settings:
   path: '/admin/config/drockchat'
   defaults:
