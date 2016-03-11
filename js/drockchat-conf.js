@@ -5,7 +5,7 @@
 		"port_conf": drupalSettings.drockchat.json.port
 	};
 	
-	/**
+	/*
 	* Made for testing stuff
 	* I wanted to make sure all values in drupalSettings Object are safe
 	* Will cast them later to JSON and get data from the drockchat-widget.js file

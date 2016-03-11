@@ -9,7 +9,7 @@ drockchat:
 json:
   version: 1.x
   js:
-    js/drockchat-conf.js: {}
+    js/drockchat-conf.json: {}
   dependencies:
     - core/jquery
     - core/drupalSettings

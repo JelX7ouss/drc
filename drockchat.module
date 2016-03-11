@@ -2,7 +2,7 @@
 
 
 use Drupal\Core\Routing\RouteMatchInterface;
-
+use Drupal\rest\ResourceResponse;
 
 /**
  * Implements hook_menu().
@@ -48,19 +48,25 @@ function drockchat_help($route_name, RouteMatchInterface $route_match) {
 
 function drockchat_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
 	
-	 if($form_id === 'drockchat.admin_settings'){
+	//  if($form_id === 'drockchat.admin_settings'){
 
-	    $form['#attached']['library'][] = 'drockchat/json';
+ //      $test = new ResourceResponse([
+ //              'json-key-1' => 'json-value-1',
+ //              'json-key-2' => 'json-value-2'
+ //            ]);
 
-	    $form['#attached']['drupalSettings']
+	//     $form['#attached']['library'][] = 'drockchat/json';
+
+	//     $form['#attached']['drupalSettings']
 	    
-	    // TODO: cast config->get('key') to JSON format  
-	    ['drockchat']['json']['server'] = \Drupal::config('drockchat.settings')->get('server');
+	//     // TODO: cast config->get('key') to JSON format  
+	//     ['drockchat']['json']['server'] = // \Drupal::config('drockchat.settings')->get('server');
+ //            $test->getResponseData();
 
-	    $form['#attached']['drupalSettings']
-	    ['drockchat']['json']['port'] = \Drupal::config('drockchat.settings')->get('port');
+	//     $form['#attached']['drupalSettings']
+	//     ['drockchat']['json']['port'] = \Drupal::config('drockchat.settings')->get('port');
 
-	    return $form;
-	}
+	//     return $form;
+	// }
 	
 }

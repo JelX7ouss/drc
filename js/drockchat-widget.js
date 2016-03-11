@@ -3,6 +3,10 @@
 	/**
 	* note: port and url will be the submitted values of the configuration module form
 	*/
+
+	$.getJSON('drockchat-conf.json', function(data){
+		console.log(data);
+	});
 	
 	// Server params.
 	var SERVER_MANAGER = {
