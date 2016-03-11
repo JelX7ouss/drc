@@ -2,7 +2,6 @@
 
 
 use Drupal\Core\Routing\RouteMatchInterface;
-use Zend\Diactoros\Response
 
 /**
  * Implements hook_menu().
