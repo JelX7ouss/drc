@@ -10,22 +10,15 @@
 namespace Drupal\drockchat\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\drockchat\WidgetHandler;
 
 
 class Rocket extends ControllerBase {
 
   public function createWidget(){
 
-      	$form['#attached']['library'][] = 'drockchat/drockchat_conf';
-
-	    $form['#attached']['drupalSettings']
-	    
-	    ['drockchat']['drockchat_conf']['server'] = \Drupal::config('drockchat.settings')->get('server');
-
-	    $form['#attached']['drupalSettings']
-	    ['drockchat']['drockchat_conf']['port'] = \Drupal::config('drockchat.settings')->get('port');
-
-	    return $form;
+  	$widget = new WidgetHandler('drockchat', 'drockchat_conf');
+  	return $widget->renderWidgetWithJSKeys(['server', 'port']);
 
   }
 

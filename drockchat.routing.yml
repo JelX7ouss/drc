@@ -1,6 +1,5 @@
 
 # Route require modifications
-# MUST: widget to appear on all the pages
 drockchat.content: 
   path: '/drockchat'  
   defaults: 
