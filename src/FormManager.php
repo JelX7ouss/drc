@@ -18,7 +18,10 @@ class FormManager {
 	public static function isPort($port){
 		return ($port > 0 && $port < 65536);
 	}
-
+	
+	
+	// This method check if user have typed the server:port
+	// which have been pointed to on one the Config page
 	public static function serverRun($url, $port){
 
 		// user running on http, https, or local
