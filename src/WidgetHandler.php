@@ -15,9 +15,9 @@ namespace Drupal\drockchat;
 
 class WidgetHandler {
 
-	private $widgetLibraryName,
-			$widgetLibraryRoute,
-			$form;
+	private  $widgetLibraryName,
+			     $widgetLibraryRoute,
+			     $form;
 
 	public function __construct($widgetLibraryName = NULL, $widgetLibraryRoute = NULL) {
 

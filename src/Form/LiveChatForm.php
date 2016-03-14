@@ -15,6 +15,9 @@ use Drupal\Core\Form\ConfigFormBase;
 use Symfony\Component\HttpFoundation\Request;
 use Drupal\Core\Form\FormStateInterface;
 
+use Drupal\drockchat\FormManager;
+
+
 class LiveChatForm extends ConfigFormBase {
 
   /**
@@ -71,20 +74,31 @@ class LiveChatForm extends ConfigFormBase {
 
     /**
     * TODO: 
-    * PORT must be in [0-65535]
+    * [x] PORT must be in [0-65535]
     * SET a DEFAULT address as well as a DEFAULT port
     * SET warning, info, notice messages
     * SET a warning message if the Rocket.Chat server is not currently active - widget shouldn't appear
     */
     
+    // fields are all submitted.
     if(!empty($form_state->getValue('url'))
         && !empty($form_state->getValue('ip_port'))
-      ){ // fields are all submitted.
-        
-
-        // make sure port has 5 digits
-        if (5 < strlen($form_state->getValue('ip_port')))
-            $form_state->setErrorByName('url', $this->t('Please type a correct port!'));
+      ){ 
+         
+        // check if port is valid  
+        if (!FormManager::isPort(
+          (int) $form_state->getValue('ip_port')
+        ))
+            $form_state->setErrorByName('port', $this->t('Please type a correct port!'));
+          
+        // check if host server is running  
+        if(FormManager::serverRun(
+          $form_state->getValue('url')/*, (int) $form_state->getValue('ip_port')*/
+        ))
+            drupal_set_message($this->t('works!'));
+        else
+            drupal_set_message($this->t('not working!'));
+          
 
     }
  
