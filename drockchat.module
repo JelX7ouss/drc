@@ -31,6 +31,8 @@ function drockchat_help($route_name, RouteMatchInterface $route_match) {
   		$output .= '<p>';
   		$output .= t('In this section, you have permission to change your <b>livechat</b> management system.');
   		$output .= t(' As for now, you\'re only permitted to configure your server address as well as the server port.');
+      $output .= '<br>';
+      $output .= t('If you\'re running a localserver, Rocket.Chat use <b>localhost:3000</b>, else only (http/https) protocols and (80/443) ports are allowed.');
   		$output .= '<br>';
   		$output .= '<br>';
   		$output .= '<small><i>' . t('please <u>note</u> that this is the alpha version of the Rocket.Chat livechat module, more updates will be available. Thank You!') . '</i></small>';	

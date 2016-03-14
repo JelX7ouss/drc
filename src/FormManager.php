@@ -19,23 +19,22 @@ class FormManager {
 		return ($port > 0 && $port < 65536);
 	}
 
-
-	// I think there is a PORT problem
-	public static function serverRun($url/*, $port*/){
+	public static function serverRun($url, $port){
 
 		// make sure the port is either 'http' or 'https'
-		// if($port == 80 || $port == 8080 || $port == 443){
+		if($port === 80 || $port === 443 || $port === 3000){
 
 			if(!empty($url)){
 
-				// remove headers to ping the server
+				// remove headers to ping the server 
+				// e.g. ping www.example.com without http(s)://
 				if(strpos($url, 'http://') !== FALSE) 
 					$url = str_replace('http://', '', $url);
 				else if (strpos($url, 'https://') !== FALSE) 
 					$url = str_replace('https://', '', $url);
 				
 				// server test
-				if($ping = @fsockopen($url, 3000, $errCode, $errStr, 1)){
+				if($ping = @fsockopen($url, $port, $errCode, $errStr, 1)){
 					fclose($ping);
 					return true;	
 				} else {
@@ -44,7 +43,7 @@ class FormManager {
 
 			}
 
-		// }
+		}
 	}
 
 

@@ -46,9 +46,9 @@ class WidgetHandler {
   	}
 
 
-  	/**
+  /**
 	* Class setters and getters.
-  	*/
+  */
 
   	public function setWidgetLibraryRoute($LRoute = NULL){
   		$this->widgetLibraryRoute = $LRoute;
