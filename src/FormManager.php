@@ -21,7 +21,9 @@ class FormManager {
 
 	public static function serverRun($url, $port){
 
-		// make sure the port is either 'http' or 'https'
+		// user running on http, https, or local
+		// thought of using an array of custom ports but
+		// '===' and '||' operators are better to use
 		if($port === 80 || $port === 443 || $port === 3000){
 
 			if(!empty($url)){
