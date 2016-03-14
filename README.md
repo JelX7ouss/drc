@@ -2,37 +2,38 @@
 
 
 
-### Overview
+### Overview:
 
-drockchat (_stupid name_ :bowtie:) is a Drupal 8 Module which offer you the ability to communicate with your website guests. This module has been tested on a local server with the default port, if you install a local Rocket.Chat server, please use localhost:3000 url.
-This module is still under developement. I will gladly accpet any request for more code and quality enhancement, please read the [todo](https://github.com/JelX7ouss/drockchat#todo) section.
+_drockchat_ (stupid name :bowtie:) is a _Drupal 8 Module_ which offer you the ability to communicate with your website guests. This Module has been tested on a local server with the default _http_ port, if you install a local Rocket.Chat server, please use localhost:3000 url, better _check_ your protocol as well.
+This Module is still under developement. I will gladly accpet any _contribution_ request for more code and quality enhancement, please read the [todo](https://github.com/JelX7ouss/drockchat#todo) section.
 
 Before installing drockchat, **make sure** you've already got a [Rocket.Chat](https://github.com/RocketChat/Rocket.Chat) server correctly installed, with a working server address and port.
 
-After installing your Rocket.Chat server, create an account (you'll have the admin role by default) and don't forget to:
-- Enable Livechat: go to `Administration > Livechat` or quickly type `your.rocket.server:port/admin/Livechat` and set `Livechat enabled` to true
-- Grant yourself the `livechat-agent` role: go to `Livechat > User Management` or quickly type `your.rocket.server:port/livechat-manager/users` you can read about `roles and permissions` [here](https://github.com/RocketChat/Rocket.Chat/wiki/Roles-and-Permissions)
+After installing your Rocket.Chat server, create an account _(you'll have the admin role by default)_ and don't forget to:
 
-### Installation
+- _Enable Livechat_: go to `Administration > Livechat` or quickly type `your.rocket.server:port/admin/Livechat` and set `Livechat enabled` to true.
+- _Grant Yourself The `livechat-agent` Role_: go to `Livechat > User Management` or quickly type `your.rocket.server:port/livechat-manager/users` you can read about `roles and permissions`. [here](https://github.com/RocketChat/Rocket.Chat/wiki/Roles-and-Permissions)
 
-- [x] Clone the repo: `git clone git@github.com:JelX7ouss/drockchat.git`
-- [x] `mkdir your_drupal_site/modules/custom`
-- [x] `cp -vr drockchat your_drupal_site_folder/modules/custom`
-- [x] clear cache (do it quickly using _drush_ within `your_drupal_site_folder` type `drush cr`) 
-- [x] Install the module: go to your Drupal site dashboard `Extend` and type `Rocket.Live` and hit install
-- [x] `drush cr`
-- [x] go to `your.website.domain/admin/config/drockchat`
-- [ ] type your server address and the server port _(works only on the default Rocket.Chat server localhost:3000. Will fix this soon)_ :blush:
-- [ ] clear cache (one more time)
-- [x] visit `your.website.domain/drockchat` and a nice red widget will appear
+### Install:
+
+- Clone the repo: `git clone git@github.com:JelX7ouss/drockchat.git`
+- `mkdir your_drupal_site/modules/custom`
+- `cp -vr drockchat your_drupal_site_folder/modules/custom`
+- Clear cache (do it quickly using _drush_ within `your_drupal_site_folder` type `drush cr`) 
+- Install the module: go to your Drupal site dashboard `Extend` and type `Rocket.Live` and hit install
+- `drush cr`
+- Go to `your.website.domain/admin/config/drockchat`
+- Type your server address and the server port (_reminder: check your server address and port_)
+- Clear cache (one more time)
+- Visit `your.website.domain/drockchat` and a nice red widget will appear
+
 
 You can now enjoy writing random messages, don't be lazy and go back to your Rocket.Chat server and reply!
 You can logout from your Drupal site, and visit `your.website.domain/drockchat` again, and use it as a guest.
 
 
-### TODO - will merge any new features
 
-- Make the widget work on all the pages of your website
-- Custom server/port configuration support, so that the Module work on the custom user server, not the local.
-- Custom Rocket.Chat slach command for the admin, to offer the ability to communicate with a **Raspberry Pi/Beaglebone** (will create another separate repo for this)
-- More features for the configuration of the module, rather than the server/port
+### TODO:
+
+- _Custom Rocket.Chat slach command for the admin, to offer the ability to communicate with a **Raspberry Pi/Beaglebone** (will create another separate repo for this)._
+- _More features for the configuration of the module._
