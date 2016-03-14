@@ -23,7 +23,7 @@ After installing your Rocket.Chat server, create an account _(you'll have the ad
 - Install the module: go to your Drupal site dashboard `Extend` and type `Rocket.Live` and hit install
 - `drush cr`
 - Go to `your.website.domain/admin/config/drockchat`
-- Type your server address and the server port _reminder: check your server address and port_
+- Type your server address and the server port (_reminder: check your server address and port_)
 - Clear cache (one more time)
 - Visit `your.website.domain/drockchat` and a nice red widget will appear
 
