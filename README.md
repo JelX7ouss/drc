@@ -4,7 +4,7 @@
 
 ### Overview:
 
-_drockchat_ (stupid name :bowtie:) is a _Drupal 8 Module_ which offer you the ability to communicate with your website guests. This Module has been tested on a local server with the default _http_ port, if you install a local Rocket.Chat server, please use localhost:3000 url, better _check_ your protocol as well.
+_drockchat_ (stupid name :bowtie:) is a _Drupal 8 Module_ which offer you the ability to communicate with your website guests. This Module has been tested on a local server with the default _http_ protocol and default 3000 port `localhost:3000`
 This Module is still under developement. I will gladly accpet any _contribution_ request for more code and quality enhancement, please read the [todo](https://github.com/JelX7ouss/drockchat#todo) section.
 
 Before installing drockchat, **make sure** you've already got a [Rocket.Chat](https://github.com/RocketChat/Rocket.Chat) server correctly installed, with a working server address and port.
