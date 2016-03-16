@@ -8,8 +8,9 @@ use Drupal\Core\Routing\RouteMatchInterface;
  */
 function drockchat_menu() {
 
-  $items['drockchat'] = array(
-    'route_name' => 'drockchat.content'
+  // 'Test' see routing   
+  $items['Test'] = array(
+    'route_name' => 'path.content'
   );
 
   $items['admin/config/drockchat'] = array(
@@ -35,7 +36,7 @@ function drockchat_help($route_name, RouteMatchInterface $route_match) {
       $output .= t('If you\'re running a localserver, Rocket.Chat use <b>localhost:3000</b>, else only (http/https) protocols and (80/443) ports are allowed.');
   		$output .= '<br>';
   		$output .= '<br>';
-  		$output .= '<small><i>' . t('please <u>note</u> that this is the alpha version of the Rocket.Chat livechat module, more updates will be available. Thank You!') . '</i></small>';	
+  		$output .= '<small><i>' . t('please <u>note</u> that this is the alpha version of the Rocket.Chat livechat module, more updates will be available.') . '</i></small>';	
   		$output .= '</p>';
   		$output .= '<br>'; 		
   		return $output;

@@ -1,11 +1,19 @@
 
-# Route require modifications
-drockchat.content: 
-  path: '/drockchat'  
-  defaults: 
-    _controller: '\Drupal\drockchat\Controller\Rocket::createWidget' 
-  requirements: 
-    _permission: 'access content'
+# The first static route was like this
+
+
+# drockchat.content: 
+#   path: '/your_path'  
+#   defaults: 
+#     _controller: '\Drupal\drockchat\Controller\Rocket::createWidget' 
+#   requirements: 
+#     _permission: 'access content'
+
+
+
+# Dynamic routing support
+route_callbacks:
+  - '\Drupal\drockchat\Routing\Routes::routes'
 
 # Route for the configuration form <ConfigFormBase>
 drockchat.admin_settings:

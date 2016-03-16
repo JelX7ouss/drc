@@ -48,8 +48,7 @@ class LiveChatForm extends ConfigFormBase {
       '#title' => $this->t('Your server address:'),
       '#required' => true,
       '#attributes' => array(
-          'placeholder' => $config->get('server'),
-          'autofocus' => TRUE
+          'placeholder' => $config->get('server')
         )
     );
 
@@ -58,8 +57,16 @@ class LiveChatForm extends ConfigFormBase {
       '#title' => $this->t('Port:'),
       '#required' => true,
       '#attributes' => array(
-          'placeholder' => $config->get('port'),
-          'autofocus' => TRUE
+          'placeholder' => $config->get('port')
+        )
+    );
+
+    $form['path'] = array(
+      '#type' => 'textfield',
+      '#title' => $this->t('Path:'),
+      '#required' => true,
+      '#attributes' => array(
+          'placeholder' => 'e.g. "mypath" will work @yoursite/mypath'
         )
     );
 
@@ -75,6 +82,7 @@ class LiveChatForm extends ConfigFormBase {
     // fields are all submitted.
     if(!empty($form_state->getValue('url'))
         && !empty($form_state->getValue('ip_port'))
+        && !empty($form_state->getValue('path'))
       ){ 
          
         // check if port is valid  
@@ -95,7 +103,13 @@ class LiveChatForm extends ConfigFormBase {
                 '<i>incorrect address, please check your server and your port.</i>'
                 .'</p>'
               )); 
-        }  
+        }
+
+        if(!FormManager::validatePath(
+          $form_state->getValue('path')
+          )){
+          // if path isn't validate...
+        }
 
     }
  
@@ -110,6 +124,8 @@ class LiveChatForm extends ConfigFormBase {
 
     drupal_set_message($this->t('Listening on @ip_port', array('@ip_port' => $form_state->getValue('ip_port'))));
 
+    drupal_set_message($this->t('Access the widget @yoursite/@path', array('@path' => $form_state->getValue('path'))));
+
     $this->config('drockchat.settings')
       ->clear('server')
       ->set('server', $form_state->getValue('url'))
@@ -118,6 +134,11 @@ class LiveChatForm extends ConfigFormBase {
     $this->config('drockchat.settings')
       ->clear('port')
       ->set('port', $form_state->getValue('ip_port'))
+      ->save();
+
+    $this->config('drockchat.settings')
+      ->clear('path')
+      ->set('path', $form_state->getValue('path'))
       ->save();
 
   }
