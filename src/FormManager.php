@@ -19,6 +19,7 @@ class FormManager {
 		return ($port > 0 && $port < 65536);
 	}
 
+	
 	// This method check if user have typed the server:port
 	// which have been pointed to on the Config page
 	public static function serverRun($url, $port){
