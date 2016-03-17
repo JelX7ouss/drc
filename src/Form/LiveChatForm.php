@@ -48,7 +48,7 @@ class LiveChatForm extends ConfigFormBase {
       '#title' => $this->t('Your server address:'),
       '#required' => true,
       '#attributes' => array(
-          'placeholder' => $config->get('server')
+          'placeholder' => $config->get('server') # last saved server or just print 'server'
         )
     );
 
@@ -57,16 +57,16 @@ class LiveChatForm extends ConfigFormBase {
       '#title' => $this->t('Port:'),
       '#required' => true,
       '#attributes' => array(
-          'placeholder' => $config->get('port')
+          'placeholder' => $config->get('port') # last saved port or just print 'port'
         )
     );
 
-    $form['path'] = array(
+    $form['slach_path'] = array(
       '#type' => 'textfield',
       '#title' => $this->t('Path:'),
       '#required' => true,
       '#attributes' => array(
-          'placeholder' => 'e.g. "mypath" will work @yoursite/mypath'
+          'placeholder' => $config->get('path') # last saved path or just print 'e.g. mypath'
         )
     );
 
@@ -82,7 +82,7 @@ class LiveChatForm extends ConfigFormBase {
     // fields are all submitted.
     if(!empty($form_state->getValue('url'))
         && !empty($form_state->getValue('ip_port'))
-        && !empty($form_state->getValue('path'))
+        && !empty($form_state->getValue('slach_path'))
       ){ 
          
         // check if port is valid  
@@ -105,8 +105,8 @@ class LiveChatForm extends ConfigFormBase {
               )); 
         }
 
-        if(!FormManager::validatePath(
-          $form_state->getValue('path')
+        if(!FormManager::isText(
+          $form_state->getValue('slach_path')
           )){
           // if path isn't validate...
         }
@@ -120,25 +120,42 @@ class LiveChatForm extends ConfigFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
 
-    drupal_set_message($this->t('Your server address is @url', array('@url' => $form_state->getValue('url'))));
+      $config = $this->config('drockchat.settings');
 
-    drupal_set_message($this->t('Listening on @ip_port', array('@ip_port' => $form_state->getValue('ip_port'))));
+      drupal_set_message(
+          $this->t(
+            'Your server address is @url', 
+            array('@url' => $form_state->getValue('url'))
+          )
+      );
 
-    drupal_set_message($this->t('Access the widget @yoursite/@path', array('@path' => $form_state->getValue('path'))));
+      drupal_set_message(
+          $this->t(
+            'Listening on @ip_port', 
+            array('@ip_port' => $form_state->getValue('ip_port'))
+          )
+      );
 
-    $this->config('drockchat.settings')
+      drupal_set_message(
+          $this->t(
+            'Access the widget @yoursite/@slach_path', 
+            array('@slach_path' => $form_state->getValue('slach_path'))
+          )
+      );
+
+      $config
       ->clear('server')
       ->set('server', $form_state->getValue('url'))
       ->save();
 
-    $this->config('drockchat.settings')
+      $config
       ->clear('port')
       ->set('port', $form_state->getValue('ip_port'))
       ->save();
 
-    $this->config('drockchat.settings')
+      $config
       ->clear('path')
-      ->set('path', $form_state->getValue('path'))
+      ->set('path', $form_state->getValue('slach_path'))
       ->save();
 
   }

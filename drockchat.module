@@ -8,8 +8,7 @@ use Drupal\Core\Routing\RouteMatchInterface;
  */
 function drockchat_menu() {
 
-  // 'Test' see routing   
-  $items['Test'] = array(
+  $items[(string) \Drupal::config('drockchat.settings')->get('path')] = array(
     'route_name' => 'path.content'
   );
 

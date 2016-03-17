@@ -1,5 +1,5 @@
-# The module configuration file which has only two keys.
+# The module configuration file
 
 server: 
 port: 
-path:
+path: 

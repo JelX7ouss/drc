@@ -46,7 +46,7 @@ class FormManager {
 		}
 	}
 
-	public static function validatePath($value){
+	public static function isText($value){
 		
 	}
 	
