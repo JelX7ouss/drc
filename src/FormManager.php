@@ -3,10 +3,10 @@
 
 /**
  * @file
- * Contains \Drupal\drockchat\FormManager.
+ * Contains \Drupal\drc\FormManager.
  */
 
-namespace Drupal\drockchat;
+namespace Drupal\drc;
 
 
 /**
@@ -46,8 +46,9 @@ class FormManager {
 		}
 	}
 
-	public static function isText($value){
-		
-	}
+
+	public static function isLowerCaseLetters($value){
+		return ctype_lower($value);	
+	}	
 	
 }

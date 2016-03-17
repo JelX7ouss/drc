@@ -3,10 +3,10 @@
 
 /**
  * @file
- * Contains \Drupal\drockchat\WidgetHandler.
+ * Contains \Drupal\drc\WidgetHandler.
  */
 
-namespace Drupal\drockchat;
+namespace Drupal\drc;
 
 
 /**
@@ -84,16 +84,15 @@ class WidgetHandler {
 		
 		// MUST know your keys before setting them
 		// SEE file.settings.yml
-		// IMPORTANT: Add every key in your file.settings.yml here
 		// I know it's a shitty design pattern, sorry
 		if(!empty($key) && !is_null($key)){
 				switch ($key) {
 					case 'server':
-							$this->buildJSArray('server', \Drupal::config('drockchat.settings')->get('server'));
+							$this->buildJSArray('server', \Drupal::config('drc.settings')->get('server'));
 						break;
 					
 					case 'port':
-							$this->buildJSArray('port', \Drupal::config('drockchat.settings')->get('port'));
+							$this->buildJSArray('port', \Drupal::config('drc.settings')->get('port'));
 						break;
 				}
 		}
@@ -102,7 +101,7 @@ class WidgetHandler {
 
   	// The values to send to the Javascript file declared in your library's route
   	// drupalSettings is a javascript global object declared by the Drupal API 
-  	// to use values within your js file, use
+  	// to get values within your js file, use
   	// e.g. drupalSettings.library.route.key
   	private function buildJSArray($key, $value){
   		$this->form['#attached']['drupalSettings']

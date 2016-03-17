@@ -1,10 +1,10 @@
 <?php
 /**
  * @file
- * Contains \Drupal\drockchat\Routing\Routes.
+ * Contains \Drupal\drc\Routing\Routes.
  */
 
-namespace Drupal\drockchat\Routing;
+namespace Drupal\drc\Routing;
 use Symfony\Component\Routing\Route;
 
 /**
@@ -22,10 +22,10 @@ class Routes {
     // Returns an array of Route objects. 
     $routes['path.content'] = new Route(
       // Path to attach this route to:
-      '/' . (string) \Drupal::config('drockchat.settings')->get('path'),
+      '/' . \Drupal::config('drc.settings')->get('path'),
       // Route defaults:
       array(
-        '_controller' => '\Drupal\drockchat\Controller\Rocket::createWidget'
+        '_controller' => '\Drupal\drc\Controller\Rocket::createWidget'
       ),
       // Route requirements:
       array(

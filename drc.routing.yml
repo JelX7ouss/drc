@@ -1,0 +1,13 @@
+
+# Dynamic routing support
+route_callbacks:
+  - '\Drupal\drc\Routing\Routes::routes' # route for \Drupal\drc\Controller\Rocket::createWidget
+
+# Route for the configuration form <ConfigFormBase>
+drc.admin_settings:
+  path: '/admin/config/drc'
+  defaults:
+    _form: '\Drupal\drc\Form\LiveChatForm'
+    _title: '<b>Rocket.Chat</b>'
+  requirements:
+    _permission: 'administer site configuration'

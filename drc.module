@@ -6,14 +6,15 @@ use Drupal\Core\Routing\RouteMatchInterface;
 /**
  * Implements hook_menu().
  */
-function drockchat_menu() {
+function drc_menu() {
 
-  $items[(string) \Drupal::config('drockchat.settings')->get('path')] = array(
+
+  $items[(string) \Drupal::config('drc.settings')->get('path')] = array(
     'route_name' => 'path.content'
   );
 
-  $items['admin/config/drockchat'] = array(
-    'route_name' => 'drockchat.admin_settings'
+  $items['admin/config/drc'] = array(
+    'route_name' => 'drc.admin_settings'
   );
 
   return $items;
@@ -23,11 +24,11 @@ function drockchat_menu() {
 /**
  * Implements hook_help().
  */
-function drockchat_help($route_name, RouteMatchInterface $route_match) {
+function drc_help($route_name, RouteMatchInterface $route_match) {
   	
-  	if($route_name === 'drockchat.admin_settings'){
+  	if($route_name === 'drc.admin_settings'){
   		$output = '<br>';
-  		$output .= '<h4>' . t('Welcome to drockchat configuration management.') . '</h4>';
+  		$output .= '<h4>' . t('Welcome to drc configuration management.') . '</h4>';
   		$output .= '<p>';
   		$output .= t('In this section, you have permission to change your <b>livechat</b> management system.');
   		$output .= t(' As for now, you\'re only permitted to configure your server address as well as the server port.');
@@ -47,9 +48,9 @@ function drockchat_help($route_name, RouteMatchInterface $route_match) {
  * Implements hook_form_alter().
  */
 
-function drockchat_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
+function drc_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
 	
-	 if($form_id === 'drockchat.admin_settings'){
+	 if($form_id === 'drc.admin_settings'){
     // when LiveChatForm get invoked..
 	}
 	

@@ -2,20 +2,20 @@
 
 /**
  * @file
- * Contains \Drupal\drockchat\Form\LiveChatForm.
+ * Contains \Drupal\drc\Form\LiveChatForm.
  *
  * 
  * The ConfigFormBase required class for module configuration
  * Any configuration enhancement must be done within  
  */
 
-namespace Drupal\drockchat\Form;
+namespace Drupal\drc\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Symfony\Component\HttpFoundation\Request;
 use Drupal\Core\Form\FormStateInterface;
 
-use Drupal\drockchat\FormManager;
+use Drupal\drc\FormManager;
 
 
 class LiveChatForm extends ConfigFormBase {
@@ -24,7 +24,7 @@ class LiveChatForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'drockchat.admin_settings';
+    return 'drc.admin_settings';
   }
 
   /**
@@ -32,7 +32,7 @@ class LiveChatForm extends ConfigFormBase {
    */
   protected function getEditableConfigNames() {
     return [
-      'drockchat.settings',
+      'drc.settings',
     ];
   }
 
@@ -41,7 +41,7 @@ class LiveChatForm extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state, Request $request = NULL) {
 
-    $config = $this->config('drockchat.settings');
+    $config = $this->config('drc.settings');
 
     $form['url'] = array(
       '#type' => 'url',
@@ -89,7 +89,7 @@ class LiveChatForm extends ConfigFormBase {
         if (!FormManager::isPort(
           (int) $form_state->getValue('ip_port')
         )){
-            $form_state->setErrorByName('port', $this->t('Please type a correct port!'));
+            $form_state->setErrorByName('ip_port', $this->t('Please type a correct port!'));
         }
 
         // check if host server is running  
@@ -105,10 +105,10 @@ class LiveChatForm extends ConfigFormBase {
               )); 
         }
 
-        if(!FormManager::isText(
+        if(!FormManager::isLowerCaseLetters(
           $form_state->getValue('slach_path')
           )){
-          // if path isn't validate...
+            $form_state->setErrorByName('slach_path',  $this->t('Please type a lowercase letter path'));
         }
 
     }
@@ -120,7 +120,13 @@ class LiveChatForm extends ConfigFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
 
-      $config = $this->config('drockchat.settings');
+      $config = $this->config('drc.settings');
+
+      drupal_set_message(
+          $this->t(
+            '<b>Clear-Cache your site.</b>'
+          )
+      );
 
       drupal_set_message(
           $this->t(

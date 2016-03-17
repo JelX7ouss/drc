@@ -7,8 +7,8 @@
 	};
 
 	var USER = {
- 		"url": drupalSettings.drockchat.drockchat_conf.server,
- 		"port": drupalSettings.drockchat.drockchat_conf.port
+ 		"url": drupalSettings.drc.drc_conf.server,
+ 		"port": drupalSettings.drc.drc_conf.port
  	};
 
  	console.log("USER: " + USER["url"] + ":" + USER["port"]);
