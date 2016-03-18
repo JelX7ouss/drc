@@ -5,13 +5,13 @@
 ### Overview:
 
 **_drc_** :bowtie: is a _Drupal 8 Module_ which offer you the ability to communicate with your website guests.
+This Module has been tested on a local server with the default _http_ protocol and default 3000 port `localhost:3000`
+This Module is still under developement.
 
 > I could just bring the embed javascript code and install a livechat widget in my Drupal website with less time than building a module. Why all this?
 
 Because installing a widget that way is simple, no features, nothing, just the already built-in widget with normal behaviour, what if you want to use some features with the widget? That's what the module for, I will gladly accpet any _contribution_ request for more code and quality enhancement, please read the [todo](https://github.com/JelX7ouss/drc#todo) section, please open a feature issue If you think something cool can be done.
 
-This Module has been tested on a local server with the default _http_ protocol and default 3000 port `localhost:3000`
-This Module is still under developement.
 
 Before installing drc, **make sure** you've already got a [Rocket.Chat](https://github.com/RocketChat/Rocket.Chat) server correctly installed, with a working server address and port.
 
