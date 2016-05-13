@@ -15,16 +15,16 @@ Before installing drc, make sure you've already got a [Rocket.Chat](https://gith
 
 ### Install:
 
-. Switch to your "/modules" folder in your drupal root files and "mkdir custom" folder
-. git clone git@github.com:JelX7ouss/drc.git
-. Clear your drupal cache with "drush cr"
-. In your site-management bar, hit "Extend", install "drc"
-. switch to [web-site-url]/admin/config/drc
-. Fill the config form
-. Clear your drupal cache one more time
+. Switch to your "/modules" folder in your drupal root files and "mkdir custom" folder <br />
+. git clone git@github.com:JelX7ouss/drc.git <br />
+. Clear your drupal cache with "drush cr" <br />
+. In your site-management bar, hit "Extend", install "drc" <br />
+. switch to [web-site-url]/admin/config/drc <br />
+. Fill the config form <br />
+. Clear your drupal cache one more time <br />
 . Visit [web-site-url]/[path-chosen] and a nice widget will appear
 
 ### TODO:
 
-. Custom Rocket.Chat slach-command, to offer the ability to connect to a _Raspberry Pi/Beaglebone_
+. Custom Rocket.Chat slach-command, to offer the ability to connect to a _Raspberry Pi/Beaglebone_ <br />
 . More features to enhance the Widget Design and Theming, Drupal Authentication with Rocket.Chat, [add-more]
