@@ -1,5 +1,5 @@
-name: Rocket.Live
-description: A module for Rocket.Chat livechat feature.
+name: drc
+description: Rocket.Chat Livechat.
 package: Custom
 configure: drc.admin_settings
 type: module
