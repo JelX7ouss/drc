@@ -15,14 +15,14 @@ Before installing drc, make sure you've already got a [Rocket.Chat](https://gith
 
 ### Install:
 
-. Switch to your "/modules" folder in your drupal root files and "mkdir custom" folder <br />
-. git clone git@github.com:JelX7ouss/drc.git <br />
-. Clear your drupal cache with "drush cr" <br />
-. In your site-management bar, hit "Extend", install "drc" <br />
-. switch to [web-site-url]/admin/config/drc <br />
+. Switch to your `/modules` folder in your drupal root files and `mkdir custom` folder <br />
+. `git clone git@github.com:JelX7ouss/drc.git` <br />
+. Clear your drupal cache with `drush cr` drush CLI command <br />
+. In your site-management bar, hit `Extend`, install "drc" <br />
+. Switch to `[web-site-url]/admin/config/drc` in your web browser <br />
 . Fill the config form <br />
 . Clear your drupal cache one more time <br />
-. Visit [web-site-url]/[path-chosen] and a nice widget will appear
+. Visit `[web-site-url]/[path-chosen]` and a nice widget will appear
 
 ### TODO:
 
