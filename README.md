@@ -10,7 +10,7 @@ Please request for more code and quality enhancement, read the [todo](https://gi
 
 Before installing drc, make sure you've already got a [Rocket.Chat](https://github.com/RocketChat/Rocket.Chat) server correctly installed, with a working server address and port.
 
-. Enable "Livechat" in your Rocket.Chat server.
+. Enable "Livechat" in your Rocket.Chat server. <br />
 . Enable the "livechat-agent" Role by switching to "Livechat > User Management".
 
 ### Install:
@@ -22,7 +22,7 @@ Before installing drc, make sure you've already got a [Rocket.Chat](https://gith
 . Switch to `[web-site-url]/admin/config/drc` in your web browser <br />
 . Fill the config form <br />
 . Clear your drupal cache one more time <br />
-. Visit `[web-site-url]/[path-chosen]` and a nice widget will appear
+. Visit `[web-site-url]/[path-chosen]` and a nice widget will appear 
 
 ### TODO:
 
