@@ -1,0 +1,6 @@
+name: rocket_chat
+description: Rocket.Chat Livechat.
+package: Custom
+configure: rocket_chat.admin_settings
+type: module
+core: 8.x

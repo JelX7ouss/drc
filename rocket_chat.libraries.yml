@@ -1,0 +1,12 @@
+# Route to enable the usage of the js required file
+rocket_char_conf:
+  version: 1.x
+  js:
+    js/app.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+
+
+
+
