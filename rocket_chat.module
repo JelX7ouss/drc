@@ -1,0 +1,76 @@
+<?php
+
+/**
+ * @file
+ * Rocket.Chat Module for Drupal 8.
+ *
+ * Currently supports the following Rocket.chat features/
+ * - Livechat.
+ *
+ * For a Rocketchat instance checkout "https://rocket.chat/".
+ */
+
+/**
+ * Copyright (c) 2016.
+ *
+ * Authors:
+ * - Houssam Jelliti <jelitihoussam@gmail.com>.
+ * - Lawri van Buël <sysosmaster@2588960.no-reply.drupal.org>.
+ *
+ * This file is part of (rocket_chat) a Drupal 8 Module for Rocket.Chat
+ * This program is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License as published by the Free Software
+ * Foundation; either version 2 of the License, or (at your option) any later
+ * version.
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details.
+ * You should have received a copy of the GNU General Public License along with
+ * this program; if not, write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_menu().
+ */
+function rocket_chat_menu() {
+  $items[(string) \Drupal::config('rocket_chat.settings')->get('path')] = array(
+    'route_name' => 'path.content',
+  );
+  $items['admin/config/rocket_chat'] = array(
+    'route_name' => 'rocket_chat.admin_settings',
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_help().
+ */
+function rocket_chat_help($route_name, RouteMatchInterface $route_match) {
+  $rname = $route_match->getRouteName();
+  if ($route_name === 'rocket_chat.admin_settings') {
+    $output = '<div class="admin admin_title title rocketchat">';
+    $output .= '<h4>' . t('Rocket.Chat configuration management.') . '</h4>';
+    $output .= '<div class="admin rocketchat">';
+    $output .= t("Here you can configure the Rocket.Chat Connection details from the rocket.chat <strong>livechat</strong> system.");
+    $output .= '<br> <mark>' . t("Warning, Curently in ALPHA release, it only supports connection of the same type (so if your drupal is https your rocketchat has to be https as well.)");
+    $output .= '</mark></div></div>';
+    return $output;
+  }
+  // No help rendered so returning an empty string.
+  return "";
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function rocket_chat_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id === 'rocket_chat.admin_settings') {
+    // When LiveChatForm get invoked..
+    // TODO implement functionality.
+  }
+}
