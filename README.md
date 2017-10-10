@@ -1,7 +1,7 @@
 *I [pushed](http://cgit.drupalcode.org/rocket_chat/) the module on [drupal.org](https://www.drupal.org/project/rocket_chat). Submit issues there. Feel free to contribute, collaborate and enhance.*
 ---------------------
 
-This Module is the first Rocket.Chat Module for Drupal ever. I worked on version 8. After it gained a little of attention, I had to push it on Drupal.org and what happened is that now Rocket.Chat has a support version for Drupal 7, thanks to _Lawri_ as he is working on it seriously. I am one of the maintainers but I am not active in the Drupal community. Pushing it to Drupal.org will make the development always on. Please keep the good job!
+This Module is the first Rocket.Chat Module for Drupal ever. I worked on version 8. After it gained attention, I had to push it on _drupal.org_ and what happened is that now Rocket.Chat has a support version for Drupal 7. I am one of the maintainers but I am not active in the Drupal community. Pushing it to _drupal.org_ will make the development always on. Please keep the good job! Thank you _[Angry Cactus](http://www.angrycactus.biz/)_ for version 8, and Thank you _[Lawri](https://www.drupal.org/u/idevit)_ for the work on version 7 :heart:
 
 
 
